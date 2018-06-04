@@ -19,7 +19,7 @@ function fileLoaded(data) {
 function setup() {
   noCanvas();
 
-  createFileInput(fileSelected);
+  // createFileInput(fileSelected);
 
   var button = select("#loadfile");
   button.mousePressed(loadFile);
