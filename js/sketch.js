@@ -6,15 +6,15 @@ function fileLoaded(data) {
   createP(join(data, "<br/>"));
 };
 
-function fileSelected(file) {
-  createP(file.name + " " + file.size + " " + file.type);
-
-  if (file.type == "text") {
-    createP(file.data);
-  } else {
-    createP("I need a text file.");
-  };
-};
+// function fileSelected(file) {
+//   createP(file.name + " " + file.size + " " + file.type);
+//
+//   if (file.type == "text") {
+//     createP(file.data);
+//   } else {
+//     createP("I need a text file.");
+//   };
+// };
 
 function setup() {
   noCanvas();
