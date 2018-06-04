@@ -1,5 +1,7 @@
+
+
 // Set the date we're counting down to
-var countDownDate = new Date("Jun 9, 2018 00:00:00").getTime();
+var countDownDate = new Date("Jun 4, 2018 23:48:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -17,12 +19,36 @@ var x = setInterval(function() {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Output the result in an element with id="demo"
-    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    document.getElementById("clock").innerHTML = days + "d " + hours + "h "
     + minutes + "m " + seconds + "s ";
 
     // If the count down is over, write some text
     if (distance < 0) {
         clearInterval(x);
-        document.getElementById("demo").innerHTML = "I";
+
+        document.getElementById("display").innerHTML = "here";
+        createButton();
+
+
+
+        function loadFile() {
+          loadStrings("23happiness.txt", fileLoaded);
+        };
+
+        function fileLoaded(data) {
+          createP(join(data, "<br/>"));
+        };
+
+        function setup() {
+          noCanvas();
+          var button = select("#loadfile");
+          button.mousePressed(loadFile);
+        };
     }
 }, 1000);
+
+function createButton() {
+  var $button = $('<button id="loadfile" value="new button" />');
+  $button.appendTo($("#display"));
+
+}
