@@ -3,7 +3,7 @@ function setup() {
   noCanvas();
 };
 // Set the date we're counting down to
-var countDownDate = new Date("Jun 9, 2018 00:00:00").getTime();
+var countDownDate = new Date("Jun 5, 2018 22:40:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -28,7 +28,7 @@ var x = setInterval(function() {
     if (distance < 0) {
         clearInterval(x);
 
-        document.getElementById("display").innerHTML = "here";
+        document.getElementById("clock").innerHTML = "Happy Birthday, mon amour.";
         createHeart();
 
 
@@ -45,8 +45,12 @@ function fileLoaded(data) {
 
 function createHeart() {
   var $button = $('<button id="demo" value="new button" />');
-  $button.appendTo($("#display"));
+  $button.appendTo($("#luvLetter"));
   var click = select("#demo");
   click.mousePressed(loadFile);
 
 };
+
+function fadedFire() {
+
+}
