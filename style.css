@@ -8,11 +8,36 @@ body {
   background: radial-gradient(ellipse at center, #a27bcc 0%, #6c5299 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a27bcc', endColorstr='#6c5299', GradientType=1);
 }
+
+button {
+  display: inline-block;
+  font-size: 100%;
+  font-family: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+  background: #C70039;
+}
+
+button:focus {
+    outline: 10px solid #900C3F;
+    outline-offset: -20px;
+}
+
+button:active {
+    transform: scale(0.99);
+}
 /* ============================================== POSITION
 */
 .cake {
   position: absolute;
-  top: 50%;
+  top: 125px;
   left: 50%;
   margin-left: -50px;
   margin-top: -50px;
@@ -202,8 +227,8 @@ p {
 }
 h1 {
   color: #6c5299;
-  font-size: 2.5em;
-  margin-top: 6.8em;
+  font-size: 3.5em;
+  margin-top: 30px;
   margin-bottom: 2.5em;
   text-align: center;
 }
@@ -211,5 +236,74 @@ p {
   color: rgba(236, 231, 227, 0.6);
   font-size: 1.4em;
   line-height: 2em;
-  margin: 2em;
+  /* margin: 2em; */
+}
+
+#luvLetter {
+  margin: 0 auto;
+
+}
+
+#txtBox {
+
+  margin: 3em;
+  margin-top: 10px;
+  border-radius: 25px;
+}
+
+/* ============================================== HEART
+*/
+
+@keyframes beat {
+    0% {transform: scale(1) rotate(225deg); box-shadow:0 0 40px #d5093c;}
+    50% {transform: scale(1.1) rotate(225deg); box-shadow:0 0 70px #d5093c;}
+    100% {transform: scale(1) rotate(225deg); box-shadow:0 0 40px #d5093c;}
+}
+
+#chest {
+    position:relative;
+    width:500px;
+    height:500px;
+    margin:0 auto;
+}
+.heart {
+    position:absolute;
+    z-index:2;
+    background: -moz-linear-gradient(-90deg, #F50A45 0%, #d5093c 40%);
+    background: -webkit-gradient(linear, right 50%, left 50%, color-stop(0%,#F50A45), color-stop(40%,#d5093c));
+    background: -webkit-linear-gradient(-90deg, #F50A45 0%,#d5093c 40%);
+    background: linear-gradient(-90deg, #F50A45 0%,#d5093c 40%);
+    -webkit-animation: beat 0.7s ease 0s infinite normal;
+    -moz-animation: beat 0.7s ease 0s infinite normal;
+    animation: beat 0.7s ease 0s infinite normal;
+}
+.heart.center {
+    background: -moz-linear-gradient(-45deg, #B80734 0%, #d5093c 40%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#B80734), color-stop(40%,#d5093c));
+    background: -webkit-linear-gradient(-45deg, #B80734 0%,#d5093c 40%);
+    background: linear-gradient(-45deg, #B80734 0%,#d5093c 40%);
+}
+.heart.top {
+    z-index:3;
+}
+.side {
+    top:20px;
+    width:220px;
+    height:220px;
+    border-radius: 220px;
+}
+.center {
+    width:210px;
+    height:210px;
+    bottom:185px;
+    left:145px;
+    font-size:0;
+    text-indent:-9999px;
+
+}
+.left {
+    left:62px;
+}
+.right {
+    right:62px;
 }

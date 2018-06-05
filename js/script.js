@@ -3,7 +3,7 @@ function setup() {
   noCanvas();
 };
 // Set the date we're counting down to
-var countDownDate = new Date("Jun 5, 2018 22:40:00").getTime();
+var countDownDate = new Date("Jun 9, 2018 00:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -27,11 +27,8 @@ var x = setInterval(function() {
     // If the count down is over, write some text
     if (distance < 0) {
         clearInterval(x);
-
         document.getElementById("clock").innerHTML = "Happy Birthday, mon amour.";
         createHeart();
-
-
     }
 }, 1000);
 
@@ -40,15 +37,33 @@ function loadFile() {
 };
 
 function fileLoaded(data) {
-  createP(join(data, "<br/>"));
+  var textP = createP(join(data, "<br/> <br/>"));
+  var div1 = createDiv('');
+  div1.id('txtBox');
+  textP.parent('txtBox');
+  div1.parent('luvLetter');
 };
 
-function createHeart() {
-  var $button = $('<button id="demo" value="new button" />');
-  $button.appendTo($("#luvLetter"));
-  var click = select("#demo");
-  click.mousePressed(loadFile);
 
+function createHeart() {
+
+  var chest = createDiv('');
+  chest.id('chest');
+  chest.parent('luvLetter');
+
+  var $button = $('<button id="heart" class="heart center" value="My Love" />');
+  // $button.appendTo($("#luvLetter"));
+  $button.appendTo($("#chest"));
+
+  var divL = createDiv('');
+  var divR = createDiv('');
+  divL.class('heart left side top');
+  divR.class('heart right side');
+  divL.parent('chest');
+  divR.parent('chest');
+
+  var click = select("#heart");
+  click.mousePressed(loadFile);
 };
 
 function fadedFire() {
